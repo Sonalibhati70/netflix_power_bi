@@ -1,0 +1,215 @@
+
+Setting environment for using XAMPP for Windows.
+Lenovo@LAPTOP-J8901KCN c:\xampp
+# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 10
+Server version: 10.4.28-MariaDB mariadb.org binary distribution
+
+Copyright (c) 2000, 2018, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> show databases;
++-------------------------+
+| Database                |
++-------------------------+
+| db101                   |
+| emp_data                |
+| employee_data           |
+| file                    |
+| frk                     |
+| gdtc                    |
+| gym_ms                  |
+| gymdb                   |
+| information_schema      |
+| mysql                   |
+| newdb                   |
+| performance_schema      |
+| phpmyadmin              |
+| practice                |
+| problem                 |
+| project                 |
+| sample                  |
+| supermart_grocery_sales |
+| task1                   |
+| task2                   |
+| task3                   |
+| task4                   |
+| task5                   |
+| test                    |
++-------------------------+
+24 rows in set (0.001 sec)
+
+MariaDB [(none)]> use supermart_grocery_sales;
+Database changed
+MariaDB [supermart_grocery_sales]> show tables;
++-----------------------------------+
+| Tables_in_supermart_grocery_sales |
++-----------------------------------+
+| q1                                |
+| q2                                |
+| q3                                |
+| q4                                |
+| q5                                |
+| sales_data                        |
++-----------------------------------+
+6 rows in set (0.001 sec)
+
+MariaDB [supermart_grocery_sales]> select * from sales_data limit 5;
++----------+----------+------------------+------------------+-------------+------------+--------+---------+----------+--------+-------------+
+| Order_ID | Customer | Category         | Sub_Category     | City        | Order_Date | Region | Sales   | Discount | Profit | State       |
++----------+----------+------------------+------------------+-------------+------------+--------+---------+----------+--------+-------------+
+| OD1      | Harish   | Oil & Masala     | Masalas          | Vellore     | 2017-11-08 | North  | 1254.00 |     0.12 | 4 |.28 | Tamil Nadu
+| OD2      | Sudha    | Beverages        | Health Drinks    | Krishnagiri | 2017-11-08 | South  |  749.00 |     0.18 | 1 |.80 | Tamil Nadu
+| OD3      | Hussain  | Food Grains      | Atta & Flour     | Perambalur  | 2017-06-12 | West   | 2360.00 |     0.21 | 1 |.20 | Tamil Nadu
+| OD4      | Jackson  | Fruits & Veggies | Fresh Vegetables | Dharmapuri  | 2016-10-11 | South  |  896.00 |     0.25 |   |.60 | Tamil Nadu
+| OD5      | Ridhesh  | Food Grains      | Organic Staples  | Ooty        | 2016-10-11 | South  | 2355.00 |     0.26 | 9 |.45 | Tamil Nadu
++----------+----------+------------------+------------------+-------------+------------+--------+---------+----------+--------+-------------+
+5 rows in set (0.001 sec)
+
+MariaDB [supermart_grocery_sales]> select * from q1;
++---------+-------------+--------------+
+| Region  | Total_Sales | Total_Profit |
++---------+-------------+--------------+
+| Central |  3468156.00 |    855475.69 |
+| East    |  4248368.00 |   1072875.42 |
+| North   |     1254.00 |       401.28 |
+| South   |  2440461.00 |    622897.78 |
+| West    |  4798743.00 |   1190846.39 |
++---------+-------------+--------------+
+5 rows in set (0.010 sec)
+
+MariaDB [supermart_grocery_sales]> select * from q2;
++----------+----------+-------------------+--------------------+----------------+------------+--------+---------+----------+--------+-------------+
+| Order_ID | Customer | Category          | Sub_Category       | City           | Order_Date | Region | Sales   | Discount | Profit | State       |
++----------+----------+-------------------+--------------------+----------------+------------+--------+---------+----------+--------+-------------+
+| OD224    | Yadav    | Beverages         | Soft Drinks        | Perambalur     | 2016-12-24 | East   | 2024.00 |     0. | | 910.80 | Tamil Nadu
+| OD356    | Yadav    | Fruits & Veggies  | Fresh Vegetables   | Ramanadhapuram | 2017-04-08 | East   | 2474.00 |     0. | | 593.76 | Tamil Nadu
+| OD471    | Yadav    | Beverages         | Soft Drinks        | Karur          | 2016-12-20 | East   |  502.00 |     0. | |  80.32 | Tamil Nadu
+| OD492    | Yadav    | Beverages         | Soft Drinks        | Tenkasi        | 2015-09-14 | East   |  531.00 |     0. | |  74.34 | Tamil Nadu
+| OD547    | Yadav    | Snacks            | Chocolates         | Tirunelveli    | 2018-11-19 | East   | 1404.00 |     0. | | 294.84 | Tamil Nadu
+| OD710    | Yadav    | Bakery            | Breads & Buns      | Vellore        | 2015-12-02 | East   | 1419.00 |     0. | | 255.42 | Tamil Nadu
+| OD1304   | Yadav    | Fruits & Veggies  | Fresh Vegetables   | Trichy         | 2018-01-19 | East   | 2314.00 |     0. | | 647.92 | Tamil Nadu
+| OD2154   | Yadav    | Eggs, Meat & Fish | Fish               | Virudhunagar   | 2017-08-19 | East   | 1081.00 |     0. | | 367.54 | Tamil Nadu
+| OD2172   | Yadav    | Food Grains       | Dals & Pulses      | Tirunelveli    | 2018-12-01 | East   | 1000.00 |     0. | | 100.00 | Tamil Nadu
+| OD2190   | Yadav    | Eggs, Meat & Fish | Mutton             | Karur          | 2017-08-19 | East   |  527.00 |     0. | |  68.51 | Tamil Nadu
+| OD2712   | Yadav    | Fruits & Veggies  | Organic Vegetables | Virudhunagar   | 2018-09-02 | East   | 1433.00 |     0. | | 487.22 | Tamil Nadu
+| OD2721   | Yadav    | Bakery            | Biscuits           | Ooty           | 2015-10-31 | East   | 1651.00 |     0. | | 313.69 | Tamil Nadu
+| OD2734   | Yadav    | Oil & Masala      | Edible Oil & Ghee  | Bodi           | 2018-10-03 | East   | 1778.00 |     0. | | 426.72 | Tamil Nadu
+| OD2812   | Yadav    | Beverages         | Health Drinks      | Tenkasi        | 2018-07-07 | East   | 2445.00 |     0. | | 122.25 | Tamil Nadu
+| OD2815   | Yadav    | Oil & Masala      | Masalas            | Cumbum         | 2016-07-23 | East   |  864.00 |     0. | | 259.20 | Tamil Nadu
+| OD3632   | Yadav    | Snacks            | Noodles            | Tirunelveli    | 2018-09-14 | East   | 1322.00 |     0. | | 132.20 | Tamil Nadu
+| OD3639   | Yadav    | Food Grains       | Organic Staples    | Coimbatore     | 2018-09-20 | East   | 1212.00 |     0. | |  84.84 | Tamil Nadu
+| OD3694   | Yadav    | Bakery            | Biscuits           | Dindigul       | 2016-11-08 | East   |  912.00 |     0. | |  91.20 | Tamil Nadu
+| OD3695   | Yadav    | Bakery            | Breads & Buns      | Perambalur     | 2016-11-20 | East   | 1818.00 |     0. | | 509.04 | Tamil Nadu
+| OD3702   | Yadav    | Bakery            | Biscuits           | Salem          | 2016-05-28 | East   |  849.00 |     0. | | 101.88 | Tamil Nadu
+| OD3875   | Yadav    | Bakery            | Biscuits           | Viluppuram     | 2015-11-17 | East   | 1482.00 |     0. | | 666.90 | Tamil Nadu
+| OD3895   | Yadav    | Snacks            | Noodles            | Viluppuram     | 2015-12-09 | East   |  865.00 |     0. | | 138.40 | Tamil Nadu
+| OD3897   | Yadav    | Snacks            | Chocolates         | Virudhunagar   | 2016-03-28 | East   | 1803.00 |     0. | | 613.02 | Tamil Nadu
+| OD3903   | Yadav    | Eggs, Meat & Fish | Fish               | Kanyakumari    | 2017-04-07 | East   | 2282.00 |     0. | | 958.44 | Tamil Nadu
+| OD3934   | Yadav    | Bakery            | Breads & Buns      | Viluppuram     | 2018-12-18 | East   |  532.00 |     0. | | 143.64 | Tamil Nadu
+| OD3969   | Yadav    | Eggs, Meat & Fish | Eggs               | Dindigul       | 2016-02-14 | East   | 1944.00 |     0. | | 563.76 | Tamil Nadu
+| OD4828   | Yadav    | Eggs, Meat & Fish | Fish               | Virudhunagar   | 2018-09-22 | East   | 1507.00 |     0. | | 587.73 | Tamil Nadu
+| OD4961   | Yadav    | Snacks            | Cookies            | Pudukottai     | 2018-03-16 | East   | 1876.00 |     0. | | 806.68 | Tamil Nadu
+| OD5325   | Yadav    | Oil & Masala      | Masalas            | Cumbum         | 2017-03-03 | East   |  521.00 |     0. | | 109.41 | Tamil Nadu
+| OD5331   | Yadav    | Fruits & Veggies  | Fresh Vegetables   | Pudukottai     | 2017-05-31 | East   |  564.00 |     0. | |  73.32 | Tamil Nadu
+| OD5815   | Yadav    | Bakery            | Cakes              | Ramanadhapuram | 2017-03-13 | East   | 1977.00 |     0. | | 177.93 | Tamil Nadu
+| OD6308   | Yadav    | Fruits & Veggies  | Organic Vegetables | Bodi           | 2015-12-31 | East   | 1112.00 |     0. | | 278.00 | Tamil Nadu
+| OD6320   | Yadav    | Fruits & Veggies  | Fresh Fruits       | Pudukottai     | 2017-01-25 | East   | 1693.00 |     0. | | 474.04 | Tamil Nadu
+| OD6519   | Yadav    | Snacks            | Noodles            | Salem          | 2017-12-12 | East   | 2099.00 |     0. | | 818.61 | Tamil Nadu
+| OD7153   | Yadav    | Oil & Masala      | Masalas            | Tenkasi        | 2017-04-01 | East   | 1076.00 |     0. | | 344.32 | Tamil Nadu
+| OD7188   | Yadav    | Food Grains       | Dals & Pulses      | Dharmapuri     | 2018-02-13 | East   | 1743.00 |     0. | | 540.33 | Tamil Nadu
+| OD7257   | Yadav    | Beverages         | Soft Drinks        | Dharmapuri     | 2018-11-19 | East   |  506.00 |     0. | | 131.56 | Tamil Nadu
+| OD7274   | Yadav    | Fruits & Veggies  | Fresh Fruits       | Coimbatore     | 2016-09-10 | East   | 1641.00 |     0. | | 196.92 | Tamil Nadu
+| OD7355   | Yadav    | Fruits & Veggies  | Fresh Fruits       | Kanyakumari    | 2018-10-19 | East   | 2370.00 |     0. | | 876.90 | Tamil Nadu
+| OD7414   | Yadav    | Fruits & Veggies  | Fresh Fruits       | Namakkal       | 2018-05-03 | East   | 1061.00 |     0. | | 169.76 | Tamil Nadu
+| OD7959   | Yadav    | Oil & Masala      | Masalas            | Chennai        | 2018-09-24 | East   | 1109.00 |     0. | | 476.87 | Tamil Nadu
+| OD8149   | Yadav    | Oil & Masala      | Masalas            | Pudukottai     | 2017-01-02 | East   |  527.00 |     0. | | 152.83 | Tamil Nadu
+| OD8162   | Yadav    | Oil & Masala      | Spices             | Kanyakumari    | 2017-07-17 | East   | 2434.00 |     0. | | 316.42 | Tamil Nadu
+| OD8402   | Yadav    | Beverages         | Soft Drinks        | Bodi           | 2018-02-17 | East   | 1849.00 |     0. | | 332.82 | Tamil Nadu
+| OD8443   | Yadav    | Snacks            | Chocolates         | Coimbatore     | 2018-09-29 | East   | 2100.00 |     0. | | 735.00 | Tamil Nadu
+| OD8614   | Yadav    | Beverages         | Soft Drinks        | Namakkal       | 2016-09-17 | East   | 1388.00 |     0. | | 513.56 | Tamil Nadu
+| OD8615   | Yadav    | Beverages         | Soft Drinks        | Nagercoil      | 2017-04-19 | East   |  953.00 |     0. | | 181.07 | Tamil Nadu
+| OD8740   | Yadav    | Beverages         | Soft Drinks        | Trichy         | 2017-01-15 | East   | 1501.00 |     0. | | 300.20 | Tamil Nadu
+| OD8751   | Yadav    | Fruits & Veggies  | Organic Fruits     | Tenkasi        | 2017-09-19 | East   | 1961.00 |     0. | | 725.57 | Tamil Nadu
+| OD9256   | Yadav    | Bakery            | Biscuits           | Cumbum         | 2016-11-09 | East   | 2288.00 |     0. | | 938.08 | Tamil Nadu
+| OD9296   | Yadav    | Snacks            | Cookies            | Tirunelveli    | 2018-03-19 | East   | 2037.00 |     0. | | 488.88 | Tamil Nadu
+| OD9337   | Yadav    | Eggs, Meat & Fish | Chicken            | Chennai        | 2018-12-16 | East   |  945.00 |     0. | | 179.55 | Tamil Nadu
+| OD9355   | Yadav    | Food Grains       | Atta & Flour       | Virudhunagar   | 2016-04-05 | East   | 1724.00 |     0. | | 379.28 | Tamil Nadu
+| OD9709   | Yadav    | Eggs, Meat & Fish | Chicken            | Nagercoil      | 2017-11-24 | East   |  756.00 |     0. | | 128.52 | Tamil Nadu
++----------+----------+-------------------+--------------------+----------------+------------+--------+---------+----------+--------+-------------+
+54 rows in set (0.005 sec)
+
+MariaDB [supermart_grocery_sales]> select * from q3;
++----------------+----------------+
+| City           | No_of_Customer |
++----------------+----------------+
+| Kanyakumari    |            459 |
+| Tirunelveli    |            446 |
+| Bodi           |            442 |
+| Krishnagiri    |            440 |
+| Vellore        |            435 |
+| Perambalur     |            434 |
+| Tenkasi        |            432 |
+| Chennai        |            432 |
+| Salem          |            431 |
+| Pudukottai     |            430 |
+| Karur          |            430 |
+| Coimbatore     |            428 |
+| Ramanadhapuram |            421 |
+| Cumbum         |            417 |
+| Virudhunagar   |            416 |
+| Madurai        |            408 |
+| Ooty           |            404 |
+| Namakkal       |            403 |
+| Viluppuram     |            397 |
+| Dindigul       |            396 |
+| Theni          |            387 |
+| Dharmapuri     |            376 |
+| Nagercoil      |            373 |
+| Trichy         |            357 |
++----------------+----------------+
+24 rows in set (0.014 sec)
+
+MariaDB [supermart_grocery_sales]> select * from q4;
++----------+----------+-------------------+--------------------+----------------+------------+---------+--------+----------+--------+-------------+
+| Order_ID | Customer | Category          | Sub_Category       | City           | Order_Date | Region  | Sales  | Discount | Profit | State       |
++----------+----------+-------------------+--------------------+----------------+------------+---------+--------+----------+--------+-------------+
+| OD693    | Harish   | Oil & Masala      | Spices             | Ramanadhapuram | 2016-03-28 | West    | 520.00 |     0. | |  52.00 | Tamil Nadu
+| OD3045   | Suresh   | Fruits & Veggies  | Organic Vegetables | Madurai        | 2017-11-10 | West    | 520.00 |     0. | | 104.00 | Tamil Nadu
+| OD9710   | Veronica | Snacks            | Chocolates         | Trichy         | 2018-02-17 | East    | 520.00 |     0. | | 109.20 | Tamil Nadu
+| OD1606   | Krithika | Oil & Masala      | Edible Oil & Ghee  | Nagercoil      | 2016-02-06 | East    | 519.00 |     0. | |  41.52 | Tamil Nadu
+| OD1705   | Verma    | Oil & Masala      | Edible Oil & Ghee  | Krishnagiri    | 2018-08-25 | East    | 519.00 |     0. | |  98.61 | Tamil Nadu
+| OD6421   | Yadav    | Fruits & Veggies  | Organic Fruits     | Coimbatore     | 2018-12-04 | West    | 519.00 |     0. | |  36.33 | Tamil Nadu
+| OD9054   | Rumaiza  | Snacks            | Cookies            | Chennai        | 2016-10-02 | West    | 519.00 |     0. | | 140.13 | Tamil Nadu
+| OD2524   | Arutra   | Eggs, Meat & Fish | Chicken            | Chennai        | 2018-08-16 | South   | 517.00 |     0. | | 155.10 | Tamil Nadu
+| OD4551   | Arutra   | Fruits & Veggies  | Fresh Vegetables   | Namakkal       | 2016-05-12 | West    | 517.00 |     0. | |  41.36 | Tamil Nadu
+| OD4953   | Veena    | Fruits & Veggies  | Organic Vegetables | Tirunelveli    | 2015-09-14 | East    | 517.00 |     0. | | 170.61 | Tamil Nadu
+| OD5461   | Amrish   | Eggs, Meat & Fish | Fish               | Coimbatore     | 2018-01-14 | South   | 517.00 |     0. | |  25.85 | Tamil Nadu
+| OD6130   | Haseena  | Oil & Masala      | Spices             | Theni          | 2015-12-08 | West    | 517.00 |     0. | |  67.21 | Tamil Nadu
+| OD7983   | Sabeela  | Eggs, Meat & Fish | Eggs               | Kanyakumari    | 2015-12-30 | Central | 517.00 |     0. | |  67.21 | Tamil Nadu
+| OD8164   | Peer     | Eggs, Meat & Fish | Chicken            | Dharmapuri     | 2018-07-22 | East    | 517.00 |     0. | |  56.87 | Tamil Nadu
+| OD748    | Ramesh   | Eggs, Meat & Fish | Mutton             | Ramanadhapuram | 2015-05-27 | West    | 516.00 |     0. | | 196.08 | Tamil Nadu
+| OD4620   | Yusuf    | Snacks            | Cookies            | Kanyakumari    | 2018-08-21 | West    | 515.00 |     0. | |  30.90 | Tamil Nadu
+| OD6880   | Ridhesh  | Snacks            | Cookies            | Viluppuram     | 2016-10-31 | West    | 514.00 |     0. | | 133.64 | Tamil Nadu
+| OD2386   | Veena    | Fruits & Veggies  | Organic Vegetables | Pudukottai     | 2015-01-19 | West    | 513.00 |     0. | |  61.56 | Tamil Nadu
+| OD4681   | Veena    | Eggs, Meat & Fish | Mutton             | Salem          | 2018-08-07 | West    | 513.00 |     0. | | 138.51 | Tamil Nadu
+| OD5570   | Jonas    | Snacks            | Chocolates         | Chennai        | 2017-08-23 | West    | 513.00 |     0. | |  87.21 | Tamil Nadu
+| OD7317   | Yusuf    | Snacks            | Chocolates         | Madurai        | 2018-11-16 | East    | 513.00 |     0. | | 215.46 | Tamil Nadu
+| OD1591   | Yusuf    | Fruits & Veggies  | Organic Fruits     | Namakkal       | 2015-05-07 | East    | 512.00 |     0. | |  92.16 | Tamil Nadu
+| OD2545   | Esther   | Oil & Masala      | Edible Oil & Ghee  | Virudhunagar   | 2016-06-04 | West    | 512.00 |     0. | |  71.68 | Tamil Nadu
+| OD5764   | Veronica | Eggs, Meat & Fish | Eggs               | Dharmapuri     | 2017-06-14 | West    | 511.00 |     0. | |  25.55 | Tamil Nadu
+| OD5897   | Shree    | Oil & Masala      | Spices             | Viluppuram     | 2017-11-13 | Central | 511.00 |     0. | | 178.85 | Tamil Nadu
+| OD7131   | Suresh   | Snacks            | Chocolates         | Nagercoil      | 2018-10-06 | East    | 510.00 |     0. | | 193.80 | Tamil Nadu
++----------+----------+-------------------+--------------------+----------------+------------+---------+--------+----------+--------+-------------+
+26 rows in set (0.007 sec)
+
+MariaDB [supermart_grocery_sales]> select * from q5;
++----------+--------------+-----------+
+| Customer | Min_Discount | Max_Sales |
++----------+--------------+-----------+
+| Harish   |         0.10 |   2500.00 |
++----------+--------------+-----------+
+1 row in set (0.006 sec)
